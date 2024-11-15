@@ -2,6 +2,7 @@
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
   import Trending from './lib/Trending.svelte';
+  import StoriesForYou from './lib/StoriesForYou.svelte';
 </script>
 
 <div class="container">
