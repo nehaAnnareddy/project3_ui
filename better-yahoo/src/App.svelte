@@ -1,16 +1,16 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
-  import Landing from './lib/Landing.svelte';
 </script>
 
 <div class="container">
-  <Sidebar />
+  <div class="sidebar"> <!-- Ensure this matches the CSS selector -->
+    <Sidebar />
+  </div>
   <div class="main-content">
     <Navbar />
-    <Landing />
   </div>
-
+</div>
 
 <style>
   .container {
@@ -18,14 +18,13 @@
   }
 
   .sidebar {
-    width: 90px; 
-    flex-shrink: 0; 
+    width: 90px; /* Match sidebar width here */
+    flex-shrink: 0; /* Ensure sidebar width stays fixed */
   }
 
   .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 90px; 
   }
 </style>

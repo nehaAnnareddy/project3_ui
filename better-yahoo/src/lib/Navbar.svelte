@@ -59,17 +59,16 @@
   </div>
   
   <style>
-    /* Inside Navbar.svelte */
     .navbar {
         display: flex;
         align-items: center;
         padding: 10px 20px;
         background-color: white;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Stronger and larger shadow */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
         justify-content: space-between;
-        position: sticky; /* Ensure it stays on top */
+        position: sticky; 
         top: 0;
-        z-index: 10; /* Ensure it appears above other content */
+        z-index: 10; 
     }
 
 
@@ -144,7 +143,7 @@
     .search-button {
       background-color: #6001D2;
       border: none;
-      border-radius: 25px; /* Oval shape */
+      border-radius: 25px; 
       width: 70px;
       height: 45px;
       display: flex;
@@ -172,8 +171,8 @@
     }
   
     .profile-pic {
-      width: 45px; /* Increased size */
-      height: 45px;
+      width: 55px; 
+      height: 55px;
       border-radius: 50%;
       cursor: pointer;
     }

@@ -1,5 +1,5 @@
 <script>
-    // Array of icon paths and labels
+    // Icon paths and labels
     const links = [
       { icon: 'src/assets/Envelope.png', text: 'Mail' },
       { icon: 'src/assets/News.png', text: 'For You' },
@@ -12,7 +12,7 @@
   
   <div class="sidebar">
     <div class="menu-icon">
-      <!-- Hamburger icon for expanding/collapsing the sidebar -->
+      <!-- Menu icon for expanding/collapsing the sidebar -->
       <svg width="800px" height="800px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4f17aa">
         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
@@ -31,7 +31,7 @@
   
   <style>
     .sidebar {
-      position: fixed; /* Keep sidebar fixed on scroll */
+      position: fixed;
       top: 0;
       left: 0;
       background-color: #d9d9d9;
@@ -43,7 +43,7 @@
       align-items: center;
       padding-top: 20px;
       box-sizing: border-box;
-      z-index: 100; /* Ensure it stays above other content */
+      z-index: 100; 
     }
   
     .menu-icon {
@@ -69,7 +69,7 @@
     }
   
     .icon {
-      width: 24px; /* Adjust size to match your design */
+      width: 24px; 
       height: 24px;
       margin-bottom: 8px;
     }
