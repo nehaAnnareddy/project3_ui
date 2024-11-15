@@ -1,11 +1,11 @@
 <script>
   import { onMount } from "svelte";
-  import { fetchTrendingNews } from "./api";
+  import { fetchTopStories } from "./api";
 
   let stories = [];
   onMount(async () => {
     try {
-      stories = await fetchTrendingNews();
+      stories = await fetchTopStories();
     } catch (error) {
       console.error("Error fetching news:", error);
     }
@@ -14,7 +14,7 @@
 
 <div class="trending-container">
   <h2>Trending Today</h2>
-  {#each stories as story}
+  <!-- {#each stories as story}
     <div class="news-item">
       <h2>{story.title}</h2>
       {#if story.image}
@@ -23,7 +23,7 @@
       <p>{story.subheading}</p>
       <a href={story.link} target="_blank">Read More</a>
     </div>
-  {/each}
+  {/each} -->
 </div>
 
 <style>
