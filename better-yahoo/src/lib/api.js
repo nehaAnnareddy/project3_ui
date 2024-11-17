@@ -41,6 +41,7 @@ export async function fetchTopStories() {
       image: item.multimedia?.[0]?.url || "",
       subheading: item.abstract,
       link: item.url,
+      category: item.section || "Unknown",
     }));
   } catch (error) {
     console.error("Error fetching top stories:", error);
