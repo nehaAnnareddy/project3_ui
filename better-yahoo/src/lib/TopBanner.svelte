@@ -147,7 +147,7 @@
         .slider {
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 70%, rgba(80, 21, 176, 0.267) 100%);
             height:350px;
-            margin:1rem;
+            margin:20px;
             display:flex;
             border-radius: 8px;
             /* justify-content:center;

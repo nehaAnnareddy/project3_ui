@@ -12,7 +12,7 @@
   <div class="main-content">
     <Navbar />
 
-    <div style="padding: 40px; width: 1000px">
+    <div style="width: 1000px">
       <TopBanner></TopBanner>
 
     </div>
