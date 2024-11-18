@@ -17,7 +17,7 @@
     <Navbar />
 
     <div style="display:flex">
-      <div style="padding: 10px 40px; width: 1000px; ">
+      <div style="padding: 10px 40px; width: 1200px; margin-top:25px; ">
         <TopBanner></TopBanner>
       </div>
       <RightSideCards />

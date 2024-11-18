@@ -20,7 +20,7 @@
 </script>
 
 <div class="stories-for-you">
-  <h2>Popular Stories</h2>
+  <h2>Stories For You</h2>
   <div class="stories-container">
     {#if isLoading}
       <p>Loading...</p>
