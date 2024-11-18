@@ -77,6 +77,7 @@
         color: #6000d3;
         margin: 0;
         padding: 20px;
+        text-align: center;
     }
   
     .news-item {
