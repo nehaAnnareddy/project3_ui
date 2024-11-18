@@ -1,7 +1,10 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
+<<<<<<< Updated upstream
   import Trending from './lib/Trending.svelte';
+=======
+>>>>>>> Stashed changes
   import StoriesForYou from './lib/StoriesForYou.svelte';
 </script>
 
