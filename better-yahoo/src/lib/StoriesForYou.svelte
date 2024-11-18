@@ -1,96 +1,141 @@
 <script>
-    import Carousel from 'svelte-carousel';
-
-    let breads = [
-        { name: "Whole Wheat Bread", img: "wholewheatbread.png", gif: "wholewheatbread.gif" },
-        { name: "White Bread", img: "whitebread.webp", gif: "whitebread.gif" },
-        { name: "Bagel", img: "bagel.png", gif: "bagel.gif"  },
-        { name: "Waffle", img: "waffle.png", gif: "waffle.gif"  },
-        { name: "English Muffin", img: "englishmuffin.webp", gif: "englishmuffin.gif"  },
-        { name: "Croissant", img: "croissant.png", gif: "croissant.gif"  },
-    ];
-
-    let currentSelection = 'none';
-
-    function handleClick(breadName) {
-        console.log(`Clicked: ${breadName}`);
-        // selectedBread.update(current => current === breadName ? 'none' : breadName);
-        currentSelection = currentSelection === breadName ? 'none' : breadName;
-    }
-
-    function refreshHandlers() {
-        console.log('Page changed, refreshing event handlers.');
-    }
-</script>
-
-<style>
-    .carousel-container {
-        max-width: 800px;
-        margin: auto;
-    }
-
-    .carousel-item {
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: transform 0.3s, filter 0.3s;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        flex-direction: column;
-    }
-
-    .carousel-item img {
-        height: 100%;
-        width: auto;
-        max-width: 120px;
-        margin: 0 10px;
-        border-radius: 50%; 
-    }
-
-    .carousel-item:hover {
-        transform: scale(1.2);
-    }
-
-    .carousel-item.selected img {
-        padding: 3px 5px;
-        border-radius: 10px;;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;    
-    }
-
-    .selection-info {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 1.2rem;
-    }
-
+    import { onMount } from "svelte";
+    import Carousel from "svelte-carousel";
+    import { fetchPopular } from "./api";
     
-</style>
-
-<div class="carousel-container">
-    <Carousel
-        particlesToShow={4}
-        particlesToScroll={1}
-        infinite={false}
-        initialPageIndex={1}
-        dots={false}
-        autoplay={false}
-        on:pageChange={refreshHandlers}
-    >
-        {#each breads as bread (bread.name)}
-            <div class="carousel-item {currentSelection === bread.name ? 'selected' : ''}" on:click={() => handleClick(bread.name)}>
-                <img src={bread.img} alt={bread.name} />
-                <span>{bread.name}</span>
-            </div>
-        {/each}
-    </Carousel>
-</div>
-
-<!-- <div class="selection-info">
-    {#if currentSelection !== 'none'}
-        Selected: {currentSelection}
+    let stories = [];
+    let isLoading = true;
+  
+    onMount(async () => {
+      try {
+        stories = await fetchPopular();
+        console.log("Fetched stories:", stories);
+      } catch (error) {
+        console.error("Error fetching stories:", error);
+        stories = [];
+      } finally {
+        isLoading = false;
+      }
+    });
+  </script>
+  
+<div class="stories-for-you">
+  <h2>Popular Stories</h2>
+  <div class="stories-container">
+    
+  
+    {#if isLoading}
+      <p>Loading...</p>
+    {:else if stories.length === 0}
+      <p>No stories available.</p>
     {:else}
-        No bread was selected
+      <Carousel
+        particlesToShow={6}
+        particlesToScroll={1}
+        infinite={true}
+        autoplay={true}
+        dots={false}
+        arrows={true}
+      >
+        {#each stories as story (story.link)}
+          <div class="news-item">
+            <a href={story.link} target="_blank" rel="noopener noreferrer">
+              <div class="image-container">
+                <img src={story.image || "https://via.placeholder.com/300x200"} alt={story.title} />
+                <div class="overlay">
+                  <h3>{story.title}</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        {/each}
+      </Carousel>
     {/if}
-</div> -->
+  </div>
+</div>
+  
+  <style>
+
+    .stories-for-you{
+        width: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .stories-container {
+      width: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    h2 {
+        color: #6000d3;
+        margin: 0;
+        padding: 20px;
+    }
+  
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+  
+    .news-item:hover {
+      transform: scale(1.05);  /* Add hover effect */
+    }
+  
+    .image-container {
+      position: relative;
+      height: 400px; /* Fixed height for consistency */
+      width: 100%;  /* Ensure it fits well in the carousel item */
+      max-width: 300px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+  
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    /* .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+    } */
+    .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+    .overlay h3 {
+      font-size: 1.2rem;
+      margin: 0;
+      text-align: left;
+    }
+  </style>
+  

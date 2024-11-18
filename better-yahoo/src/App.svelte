@@ -11,6 +11,7 @@
   </div>
   <div class="main-content">
     <Navbar />
+    <StoriesForYou/>
     <Trending />
   </div>
 </div>
