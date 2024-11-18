@@ -1,28 +1,58 @@
 <script>
-  import WeatherCard from './WeatherCard.svelte';
-  import HoroscopeCard from './HoroscopeCard.svelte';
-  import TrendingNowCard from './TrendingNowCard.svelte';
+  import WeatherCard from "./WeatherCard.svelte";
+  import HoroscopeCard from "./HoroscopeCard.svelte";
+  import TrendingNowCard from "./TrendingNowCard.svelte";
 
   let trendingNews = [
-    'Matt Gaetz',
-    'Hurricane Sara',
-    'Detroit Lions',
-    'The Golden Bachelor',
-    'Russia-Ukraine',
-    'Alex Jones',
-    'Craig Melvin',
-    'Tyson vs. Pau',
-    'Caitlin Clark',
-    'Dave Coulier',
+    "Matt Gaetz",
+    "Hurricane Sara",
+    "Detroit Lions",
+    "The Golden Bachelor",
+    "Russia-Ukraine",
+    "Alex Jones",
+    "Craig Melvin",
+    "Tyson vs. Pau",
+    "Caitlin Clark",
+    "Dave Coulier",
   ];
 
   // Visibility states for the cards
   let showWeatherCard = true;
   let showTrendingNowCard = true;
-  let showHoroscopeCard = true;
+  let showHoroscopeCard = false;
 
   // Hamburger menu state
   let isMenuOpen = false;
+
+  // Function to enforce at least one and at most two cards
+  function enforceCardLimit(cardName) {
+    const visibleCards = [
+      showWeatherCard,
+      showTrendingNowCard,
+      showHoroscopeCard,
+    ].filter((state) => state).length;
+
+    // Ensure at least one card is selected
+    if (visibleCards === 0) {
+      if (cardName === "weather") showWeatherCard = true;
+      if (cardName === "trending") showTrendingNowCard = true;
+      if (cardName === "horoscope") showHoroscopeCard = true;
+    }
+
+    // Ensure at most two cards are selected
+    if (visibleCards > 2) {
+      if (cardName === "weather") {
+        if (showTrendingNowCard) showTrendingNowCard = false;
+        else showHoroscopeCard = false;
+      } else if (cardName === "trending") {
+        if (showWeatherCard) showWeatherCard = false;
+        else showHoroscopeCard = false;
+      } else if (cardName === "horoscope") {
+        if (showWeatherCard) showWeatherCard = false;
+        else showTrendingNowCard = false;
+      }
+    }
+  }
 </script>
 
 <div class="side-section">
@@ -30,16 +60,30 @@
     <!-- Hamburger Icon -->
     <button class="hamburger" on:click={() => (isMenuOpen = !isMenuOpen)}>
       <div class="menu-icon">
-        <!-- Menu icon for expanding/collapsing the sidebar -->
-        <svg width="800px" height="800px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#4f17aa">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-          <g id="SVGRepo_iconCarrier"> 
-            <path fill="#4f17aa" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+        <svg
+          width="800px"
+          height="800px"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="#4f17aa"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0" />
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <g id="SVGRepo_iconCarrier">
+            <path
+              fill="#4f17aa"
+              fill-rule="evenodd"
+              d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"
+            />
           </g>
         </svg>
       </div>
-     </button>
+    </button>
     <!-- Dropdown Menu -->
     {#if isMenuOpen}
       <div class="dropdown">
@@ -47,6 +91,7 @@
           <input
             type="checkbox"
             bind:checked={showWeatherCard}
+            on:change={() => enforceCardLimit("weather")}
           />
           Weather
         </label>
@@ -54,6 +99,7 @@
           <input
             type="checkbox"
             bind:checked={showTrendingNowCard}
+            on:change={() => enforceCardLimit("trending")}
           />
           Trending Now
         </label>
@@ -61,6 +107,7 @@
           <input
             type="checkbox"
             bind:checked={showHoroscopeCard}
+            on:change={() => enforceCardLimit("horoscope")}
           />
           Daily Horoscope
         </label>
@@ -73,7 +120,7 @@
       <WeatherCard />
     {/if}
     {#if showTrendingNowCard}
-      <TrendingNowCard trendingNews={trendingNews} />
+      <TrendingNowCard {trendingNews} />
     {/if}
     {#if showHoroscopeCard}
       <HoroscopeCard />
@@ -84,22 +131,23 @@
 <style>
   /* Side Section */
   .side-section {
-   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   /* Menu Styles */
   .menu {
     position: relative;
-    top: 40px;
-    margin-bottom: 70px; /* Space between menu and cards */
   }
 
   .hamburger {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    margin-right: 60px;
+    padding: 50px;
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
 
   .hamburger-icon {
@@ -109,8 +157,8 @@
 
   .dropdown {
     position: absolute;
+    top: 50px; /* Adjusted to align below the button */
     right: 0;
-    top: 40px;
     background: white;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -119,6 +167,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    z-index: 1000; /* Ensures it stays above other elements */
+    margin-top: 20px;
   }
 
   .dropdown label {
@@ -137,12 +187,12 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
   }
 
   svg {
-      padding-top: 15px;
-      width: 24px;
-      height: 24px;
-      color: #7c59a8;
-    }
+    width: 24px;
+    height: 24px;
+    color: #7c59a8;
+  }
 </style>
