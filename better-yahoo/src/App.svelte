@@ -1,7 +1,9 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
+  import TopBanner from './lib/TopBanner.svelte';
   import Trending from './lib/Trending.svelte';
+  import StoriesForYou from './lib/StoriesForYou.svelte';
   import RightSideCards from './lib/RightSideCards.svelte';
   
 </script>
@@ -12,12 +14,23 @@
   </div>
   <div class="main-content">
     <Navbar />
+  <div style="display:flex">
+    <div style="width: 1000px">   
+      <TopBanner></TopBanner>
+    </div>
+    <RightSideCards />
+
+  </div>
+
+    
+    <StoriesForYou/>
     <Trending />
 
-    <RightSideCards />
     
   </div>
 </div>
+
+
 
 <style>
   .container {

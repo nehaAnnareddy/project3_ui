@@ -34,7 +34,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      background-color: #d9d9d9;
+      background-color: #d9d9d9c1;
       color: white;
       width: 90px;
       height: 100vh;

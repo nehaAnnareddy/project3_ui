@@ -55,6 +55,7 @@
   .weather-card {
     width: 80%;
     max-width: 400px;
+    min-width: 350px;
     border-radius: 8px;
     box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
     background-color: white;
