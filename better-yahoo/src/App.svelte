@@ -12,10 +12,12 @@
   </div>
   <div class="main-content">
     <Navbar />
-    <StoriesForYou/>
-    <div style="padding: 40px; width: 1000px">
+
+
+    <div style="width: 1000px">   
       <TopBanner></TopBanner>
     </div>
+    <StoriesForYou/>
     <Trending />
   </div>
 </div>
