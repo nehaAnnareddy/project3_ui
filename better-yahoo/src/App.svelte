@@ -1,7 +1,6 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
-  import Trending from './lib/TrendingNowCard.svelte';
   import RightSideCards from './lib/RightSideCards.svelte';
   
 </script>
