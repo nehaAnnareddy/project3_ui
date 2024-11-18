@@ -15,8 +15,9 @@
     "vite": "^5.4.1"
   },
   "dependencies": {
-    "svelte-carousel": "^1.0.25",
+    "@rollup/rollup-win32-x64-msvc": "^4.27.3",
     "flowbite-svelte": "^0.47.3",
-    "siema": "^1.5.1"
+    "siema": "^1.5.1",
+    "svelte-carousel": "^1.0.25"
   }
 }
