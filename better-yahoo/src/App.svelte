@@ -3,6 +3,7 @@
   import Navbar from './lib/Navbar.svelte';
   import TopBanner from './lib/TopBanner.svelte';
   import Trending from './lib/Trending.svelte';
+  import StoriesForYou from './lib/StoriesForYou.svelte';
 </script>
 
 <div class="container">
@@ -12,13 +13,12 @@
   <div class="main-content">
     <Navbar />
 
-    <div style="width: 1000px">
+
+    <div style="width: 1000px">   
       <TopBanner></TopBanner>
-
     </div>
-
+    <StoriesForYou/>
     <Trending />
-
   </div>
 </div>
 
