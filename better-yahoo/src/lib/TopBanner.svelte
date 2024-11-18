@@ -8,6 +8,13 @@
         
         export let data = [
     {
+      src: "/images/img4.png",
+      title: "Fire Weather Watch and Wind Advisory issued for Hawaii",
+      description: "The National Weather Service has issued both a Fire Weather Watch and a Wind Advisory for several areas of Hawaii, with strong winds and low humidity expected to create hazardous conditions on Friday, Nov. 15.",
+      author: "Lucy Lopez",
+      Link: "https://www.yahoo.com/news/fire-weather-watch-wind-advisory-024857099.html"
+    },
+    {
       src: "/images/img1.png",
       title: "Trump To Nominate Tulsi Gabbard As Director Of National Intelligence",
       description: "President-elect Donald Trump has named former Rep. Tulsi Gabbard as his pick for director of national intelligence, praising the former Democrat as 'now a proud Republican.'",
@@ -31,13 +38,7 @@
       Link: "https://www.yahoo.com/finance/news/gold-loses-luster-trump-decisive-150018236.html"
 
     },
-    {
-      src: "/images/img4.png",
-      title: "Fire Weather Watch and Wind Advisory issued for Hawaii",
-      description: "The National Weather Service has issued both a Fire Weather Watch and a Wind Advisory for several areas of Hawaii, with strong winds and low humidity expected to create hazardous conditions on Friday, Nov. 15.",
-      author: "Lucy Lopez",
-      Link: "https://www.yahoo.com/news/fire-weather-watch-wind-advisory-024857099.html"
-    }
+    
 
   ];
         
@@ -105,12 +106,12 @@
     {/each}
     </div>
 
-    <button on:click={prev}>
+    <!-- <button on:click={prev}>
         prev
     </button>
     <button on:click={next}>
         next
-    </button>
+    </button> -->
 
     <style>
 
@@ -146,7 +147,7 @@
             
         }
         .slider {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 70%, rgba(80, 21, 176, 0.267) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.133) 70%, rgba(80, 21, 176, 0.267) 100%);
             height:350px;
             margin:20px;
             display:flex;

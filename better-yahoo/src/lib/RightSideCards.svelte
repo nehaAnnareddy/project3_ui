@@ -87,7 +87,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Align content to the right */
-    margin: 15px;
   }
 
   /* Menu Styles */
