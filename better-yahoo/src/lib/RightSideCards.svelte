@@ -61,26 +61,16 @@
     <button class="hamburger" on:click={() => (isMenuOpen = !isMenuOpen)}>
       <div class="menu-icon">
         <svg
-          width="800px"
-          height="800px"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           stroke="#4f17aa"
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0" />
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+          <path
+            fill="#4f17aa"
+            fill-rule="evenodd"
+            d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"
           />
-          <g id="SVGRepo_iconCarrier">
-            <path
-              fill="#4f17aa"
-              fill-rule="evenodd"
-              d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"
-            />
-          </g>
         </svg>
       </div>
     </button>
@@ -131,9 +121,11 @@
 <style>
   /* Side Section */
   .side-section {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding: 1rem;
   }
 
   /* Menu Styles */
@@ -145,37 +137,34 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 50px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding: 0.5rem;
   }
 
   .hamburger-icon {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .dropdown {
     position: absolute;
-    top: 50px; /* Adjusted to align below the button */
+    top: 100%; /* Positioned directly below the button */
     right: 0;
     background: white;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 0.5rem;
+    padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
     z-index: 1000; /* Ensures it stays above other elements */
-    margin-top: 20px;
   }
 
   .dropdown label {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
+    gap: 0.5rem;
+    font-size: 1rem;
   }
 
   .dropdown input {
@@ -186,13 +175,13 @@
   .card-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     width: 100%;
   }
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     color: #7c59a8;
   }
 </style>
