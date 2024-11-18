@@ -14,12 +14,12 @@
   </div>
   <div class="main-content">
     <Navbar />
+
   <div style="display:flex">
-    <div style="width: 1000px">   
+    <div style="padding: 10px 40px; width: 1000px; ">   
       <TopBanner></TopBanner>
     </div>
     <RightSideCards />
-
   </div>
 
     
