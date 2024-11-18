@@ -1,36 +1,34 @@
 <script>
-  import Sidebar from './lib/Sidebar.svelte';
-  import Navbar from './lib/Navbar.svelte';
-  import TopBanner from './lib/TopBanner.svelte';
-  import Trending from './lib/Trending.svelte';
-  import StoriesForYou from './lib/StoriesForYou.svelte';
-  import RightSideCards from './lib/RightSideCards.svelte';
-  
+  import Sidebar from "./lib/Sidebar.svelte";
+  import Navbar from "./lib/Navbar.svelte";
+  import TopBanner from "./lib/TopBanner.svelte";
+  import Trending from "./lib/Trending.svelte";
+  import StoriesForYou from "./lib/StoriesForYou.svelte";
+  import RightSideCards from "./lib/RightSideCards.svelte";
+  import Footer from "./lib/Footer.svelte";
 </script>
 
 <div class="container">
-  <div class="sidebar"> <!-- Ensure this matches the CSS selector -->
+  <div class="sidebar">
+    <!-- Ensure this matches the CSS selector -->
     <Sidebar />
   </div>
   <div class="main-content">
     <Navbar />
 
-  <div style="display:flex">
-    <div style="padding: 10px 40px; width: 1000px; ">   
-      <TopBanner></TopBanner>
+    <div style="display:flex">
+      <div style="padding: 10px 40px; width: 1000px; ">
+        <TopBanner></TopBanner>
+      </div>
+      <RightSideCards />
     </div>
-    <RightSideCards />
-  </div>
 
-    
-    <StoriesForYou/>
+    <StoriesForYou />
     <Trending />
 
-    
+    <Footer />
   </div>
 </div>
-
-
 
 <style>
   .container {

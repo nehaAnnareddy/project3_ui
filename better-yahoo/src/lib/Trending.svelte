@@ -153,9 +153,11 @@
   .gallery {
     column-count: 4;
     column-gap: 20px;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
     width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 
   .gallery-item {
