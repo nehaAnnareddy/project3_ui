@@ -26,7 +26,7 @@
     {
       src: "/images/img3.png",
       title: "Gold Loses Some Luster After Trump’s Decisive Win",
-      description: "Donald Trump’s victory immediately buoyed markets from stocks to Bitcoin. Gold is going to take a lot longer to turn things around. In the two days immediately following the Republican candidate’s win ...",
+      description: "Donald Trump’s victory immediately buoyed markets from stocks to Bitcoin. Gold is going to take a lot longer to turn things around. In the two days immediately following the Republican candidate’s win...",
       author: "Yvonne Yue Li and Sybilla Gross",
       Link: "https://www.yahoo.com/finance/news/gold-loses-luster-trump-decisive-150018236.html"
 
@@ -105,12 +105,12 @@
     {/each}
     </div>
 
-    <!-- <button on:click={prev}>
+    <button on:click={prev}>
         prev
     </button>
     <button on:click={next}>
         next
-    </button> -->
+    </button>
 
     <style>
 
@@ -122,6 +122,7 @@
 
         a:hover {
             color: #6001d2; 
+            text-decoration: underline;
         }
 
         .grayBox {
