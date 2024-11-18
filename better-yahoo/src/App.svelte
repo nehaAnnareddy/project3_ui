@@ -1,6 +1,7 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
+  import TopBanner from './lib/TopBanner.svelte';
   import Trending from './lib/Trending.svelte';
 </script>
 
@@ -10,9 +11,18 @@
   </div>
   <div class="main-content">
     <Navbar />
+
+    <div style="padding: 40px; width: 1000px">
+      <TopBanner></TopBanner>
+
+    </div>
+
     <Trending />
+
   </div>
 </div>
+
+
 
 <style>
   .container {
