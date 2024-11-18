@@ -90,13 +90,13 @@
     }
   
     .news-item:hover {
-      transform: scale(1.05);  /* Add hover effect */
+      transform: scale(1.05); 
     }
   
     .image-container {
       position: relative;
-      height: 400px; /* Fixed height for consistency */
-      width: 100%;  /* Ensure it fits well in the carousel item */
+      height: 400px; 
+      width: 100%;  
       max-width: 300px;
       margin: 0 auto;
       overflow: hidden;
@@ -109,18 +109,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   
-    /* .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-    } */
     .overlay {
     position: absolute;
     bottom: 0;
