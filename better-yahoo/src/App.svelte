@@ -4,6 +4,8 @@
   import TopBanner from './lib/TopBanner.svelte';
   import Trending from './lib/Trending.svelte';
   import StoriesForYou from './lib/StoriesForYou.svelte';
+  import RightSideCards from './lib/RightSideCards.svelte';
+  
 </script>
 
 <div class="container">
@@ -13,12 +15,18 @@
   <div class="main-content">
     <Navbar />
 
-
+  <div style="display:flex">
     <div style="padding: 10px 40px; width: 1000px; ">   
       <TopBanner></TopBanner>
     </div>
+    <RightSideCards />
+  </div>
+
+    
     <StoriesForYou/>
     <Trending />
+
+    
   </div>
 </div>
 
