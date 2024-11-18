@@ -14,7 +14,7 @@
     <Navbar />
 
 
-    <div style="width: 1000px">   
+    <div style="padding: 10px 40px; width: 1000px; ">   
       <TopBanner></TopBanner>
     </div>
     <StoriesForYou/>

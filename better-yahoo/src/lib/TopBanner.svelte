@@ -26,7 +26,7 @@
     {
       src: "/images/img3.png",
       title: "Gold Loses Some Luster After Trump’s Decisive Win",
-      description: "Donald Trump’s victory immediately buoyed markets from stocks to Bitcoin. Gold is going to take a lot longer to turn things around. In the two days immediately following the Republican candidate’s win, the precious metal’s performance was the worst in at least 13 US ...",
+      description: "Donald Trump’s victory immediately buoyed markets from stocks to Bitcoin. Gold is going to take a lot longer to turn things around. In the two days immediately following the Republican candidate’s win ...",
       author: "Yvonne Yue Li and Sybilla Gross",
       Link: "https://www.yahoo.com/finance/news/gold-loses-luster-trump-decisive-150018236.html"
 
@@ -153,6 +153,7 @@
             /* justify-content:center;
             align-items:center; */
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px -1px inset, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
         .slider img{
             width: 640px;
