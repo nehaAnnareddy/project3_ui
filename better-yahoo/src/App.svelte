@@ -1,7 +1,9 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
   import Navbar from './lib/Navbar.svelte';
-  import Trending from './lib/Trending.svelte';
+  import Trending from './lib/TrendingNowCard.svelte';
+  import RightSideCards from './lib/RightSideCards.svelte';
+  
 </script>
 
 <div class="container">
@@ -10,7 +12,8 @@
   </div>
   <div class="main-content">
     <Navbar />
-    <Trending />
+    <RightSideCards />
+    
   </div>
 </div>
 
