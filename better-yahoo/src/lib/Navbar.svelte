@@ -42,19 +42,19 @@
         
         <!-- Voice Search button -->
         <button type="button" class="voice-button" aria-label="Search by voice">
-          <img src="src/assets/voice.png" alt="Voice Search" />
+          <img src="/Voice.png" alt="Voice Search" />
         </button>
         
         <!-- Search button -->
         <button type="submit" class="search-button" aria-label="Search">
-          <img src="src/assets/Search.png" alt="Search" />
+          <img src="/Search.png" alt="Search" />
         </button>
       </form>
     </div>
   
     <!-- Profile Section -->
     <div class="profile">
-      <img src="src/assets/ProfileIcon.jpeg" alt="Profile" class="profile-pic" />
+      <img src="/ProfileIcon.jpeg" alt="Profile" class="profile-pic" />
     </div>
   </div>
   

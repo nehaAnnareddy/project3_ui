@@ -24,7 +24,7 @@
         "Find out what this wonder fruit is and how it can change your life.",
       category: "advertisement",
       link: "https://example.com/",
-      image: "src/assets/ads/1.jpg",
+      image: "/ads/1.jpg",
     },
     {
       title: "Get Your Confidence Back, Just Like The Good Old Days.",
@@ -32,7 +32,7 @@
         "We get it, you hair is gone! But it is not too late, meet our hair experts and see what we can do.",
       category: "advertisement",
       link: "https://example.com/",
-      image: "src/assets/ads/2.jpg",
+      image: "/ads/2.jpg",
     },
     {
       title: "Safe Money On Your Phone Every Month",
@@ -40,7 +40,7 @@
         "You could be overpaying on your phone bill but don't worry, we have a solution for you.",
       category: "advertisement",
       link: "https://example.com/",
-      image: "src/assets/ads/3.jpg",
+      image: "/ads/3.jpg",
     },
   ];
 

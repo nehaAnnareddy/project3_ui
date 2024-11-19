@@ -1,7 +1,7 @@
 <script>
   const links = [
-    { text: 'rain', icon: 'src/assets/rainyDay.png' },
-    { text: 'cloud', icon: 'src/assets/cloudyDay.png' }
+    { text: 'rain', icon: '/rainyDay.png' },
+    { text: 'cloud', icon: '/cloudyDay.png' }
   ];
   function findIcon(weatherType) {
     const match = links.find(link => link.text === weatherType);
@@ -25,7 +25,7 @@
       </div>
       <div class="location">
         {location} 
-        <img src="src/assets/location.png" alt="Location Icon" class="location-icon" />
+        <img src="/location.png" alt="Location Icon" class="location-icon" />
       </div>
     </div>
 

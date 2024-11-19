@@ -1,5 +1,5 @@
 <script>
-  const dropdownIcon = 'src/assets/dropdown.png';
+  const dropdownIcon = '/dropdown.png';
 </script>
 
 <div class="horoscope-card">
@@ -15,7 +15,7 @@
   </div>
 
   <div class="content">
-    <img src="src/assets/horoscope.png" alt="Horoscope icon" class="horoscope-icon" />
+    <img src="/horoscope.png" alt="Horoscope icon" class="horoscope-icon" />
     <div class="details">
       <div class="date"><strong>November 17</strong></div>
       <div class="description">

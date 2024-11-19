@@ -1,12 +1,12 @@
 <script>
   // Icon paths and labels
   const links = [
-    { icon: "src/assets/Envelope.png", text: "Mail" },
-    { icon: "src/assets/News.png", text: "For You" },
-    { icon: "src/assets/Bribery.png", text: "Finance" },
-    { icon: "src/assets/Controller.png", text: "Games" },
-    { icon: "src/assets/Ball.png", text: "Sports" },
-    { icon: "src/assets/Film Slate.png", text: "Entertainment" },
+    { icon: "/Envelope.png", text: "Mail" },
+    { icon: "/News.png", text: "For You" },
+    { icon: "/Bribery.png", text: "Finance" },
+    { icon: "/Controller.png", text: "Games" },
+    { icon: "/Ball.png", text: "Sports" },
+    { icon: "/Film Slate.png", text: "Entertainment" },
   ];
 </script>
 
