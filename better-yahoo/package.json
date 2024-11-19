@@ -17,6 +17,7 @@
   "dependencies": {
     "flowbite-svelte": "^0.47.3",
     "siema": "^1.5.1",
-    "svelte-carousel": "^1.0.25"
+    "svelte-carousel": "^1.0.25",
+    "sweetalert2": "^11.14.5"
   }
 }
